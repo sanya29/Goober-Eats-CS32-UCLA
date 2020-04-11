@@ -1,0 +1,20 @@
+Report.
+Time Complexities:
+
+StreetMap:  
+/////////////////////////////
+load()
+Suppose there are N streets in the file, and L street segments for each street. So the total time complexity of reading all of the lines from the data file is O(N*L).
+
+getSegmentsThatStartWith()
+Suppose there are L street segments in the hash map. Finding them in the hash map will be of a constant time complexity, but setting the vector returned by the find function equal to the vector inside getSegmentsThatStartWith() will cost O(L).
+
+PointToPointRouter: 
+/////////////////////////////
+generatePointToPointRoute()
+Suppose there are G total GeoCoords and L street segments associated with each GeoCoord. We need to process a queue storing G GeoCoords, and we also need to process a vector of L street segments. So the time complexity is O(G*L).
+
+DeliveryOptimizer: 
+/////////////////////////////
+optimizeDeliveryOrder()
+I have implemented Simulated Annealing here. I use just two data structures: one vector that stores the old order of Delivery Requests (deliveries), and one other vector that stores the same Delivery Requests in an order that is optimized (optimizedDeliveries). I modify my deliveries vector from time to time to accept new optimized solutions stored in optimizedDeliveries vector. Apart from these, I just use a few double variables to keep track of and calculate my distances, the temperature, and the cooling rate. I created three of my own functions: (1) calculate the crow distance, (2) randomly swap two items in my vector (to change the configuration of the system), and (3) to generate a random number.
